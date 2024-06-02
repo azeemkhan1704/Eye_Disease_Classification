@@ -29,7 +29,7 @@ def predict(image):
 
 # Streamlit app
 def main():
-    st.title('Model Deployment with Streamlit')
+    st.title('Eye Disease Classifier')
 
     # Input image
     uploaded_file = st.file_uploader("Choose an image...", type=["jpg", "jpeg", "png"])
