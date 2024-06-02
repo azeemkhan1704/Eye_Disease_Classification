@@ -11,6 +11,9 @@ def load_model():
 
 model = load_model()
 
+# Map predicted class indices to class labels
+class_labels = ['glaucoma', 'normal', 'diabetic_retinopathy', 'cataract']
+
 # Create a function to make predictions
 def predict(image):
     # Preprocess the image
@@ -38,7 +41,8 @@ def main():
         # Make prediction
         if st.button('Predict'):
             prediction_class = predict(image)
-            st.write('Predicted Class:', prediction_class)
+            predicted_label = class_labels[prediction_class[0]]
+            st.write('Predicted Class:', predicted_label)
 
 if __name__ == '__main__':
     main()
